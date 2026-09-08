@@ -20,29 +20,29 @@ def render():
 
     st.markdown(
         """
-<div style="
-    text-align:center;
-    margin-top:3rem;
-    margin-bottom:1.5rem;
-">
-    <span style="font-size:40px;">🗓️</span>
+        <div style="
+            text-align:center;
+            margin-top:3rem;
+            margin-bottom:1.5rem;
+        ">
+            <span style="font-size:40px;">🗓️</span>
 
-    <div style="
-        font-size:24px;
-        font-weight:700;
-        color:#0B1A3D;
-    ">
-        AI Meeting Assistant
-    </div>
+            <div style="
+                font-size:24px;
+                font-weight:700;
+                color:#0B1A3D;
+            ">
+                AI Meeting Assistant
+            </div>
 
-    <div style="
-        font-size:13px;
-        color:#5B6B8C;
-    ">
-        Sign in to continue
-    </div>
-</div>
-""",
+            <div style="
+                font-size:13px;
+                color:#5B6B8C;
+            ">
+                Sign in to continue
+            </div>
+        </div>
+        """,
         unsafe_allow_html=True,
     )
 
@@ -53,7 +53,6 @@ def render():
     col1, col2, col3 = st.columns([1, 2, 1])
 
     with col2:
-
         with st.container(border=True):
 
             tab1, tab2 = st.tabs(
@@ -70,19 +69,19 @@ def render():
 
                 email = st.text_input(
                     "Email",
-                    key="login_email"
+                    key="login_email",
                 )
 
                 password = st.text_input(
                     "Password",
                     type="password",
-                    key="login_password"
+                    key="login_password",
                 )
 
                 if st.button(
                     "Log in",
                     type="primary",
-                    use_container_width=True
+                    use_container_width=True,
                 ):
 
                     if not email or not password:
@@ -97,7 +96,7 @@ def render():
 
                             result = api.login(
                                 email,
-                                password
+                                password,
                             )
 
                             # Store JWT token
@@ -123,32 +122,30 @@ def render():
 
             with tab2:
 
-                section_label(
-                    "Create account"
-                )
+                section_label("Create account")
 
                 new_email = st.text_input(
                     "Email",
-                    key="register_email"
+                    key="register_email",
                 )
 
                 new_password = st.text_input(
                     "Password",
                     type="password",
                     key="register_password",
-                    help="At least 8 characters"
+                    help="At least 8 characters",
                 )
 
                 confirm_password = st.text_input(
                     "Confirm password",
                     type="password",
-                    key="register_confirm"
+                    key="register_confirm",
                 )
 
                 if st.button(
                     "Create account",
                     type="primary",
-                    use_container_width=True
+                    use_container_width=True,
                 ):
 
                     if not new_email or not new_password:
@@ -169,7 +166,7 @@ def render():
 
                             result = api.register(
                                 new_email,
-                                new_password
+                                new_password,
                             )
 
                             # Store JWT token
