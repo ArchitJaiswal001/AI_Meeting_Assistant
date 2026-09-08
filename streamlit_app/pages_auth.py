@@ -46,7 +46,6 @@ def render():
         unsafe_allow_html=True,
     )
 
-
     # --------------------------------------------------
     # Login / Register Container
     # --------------------------------------------------
@@ -60,7 +59,6 @@ def render():
             tab1, tab2 = st.tabs(
                 ["Log in", "Create account"]
             )
-
 
             # ==================================================
             # LOGIN
@@ -80,7 +78,6 @@ def render():
                     type="password",
                     key="login_password"
                 )
-
 
                 if st.button(
                     "Log in",
@@ -120,7 +117,6 @@ def render():
 
                             st.error(str(e))
 
-
             # ==================================================
             # REGISTER
             # ==================================================
@@ -148,7 +144,6 @@ def render():
                     type="password",
                     key="register_confirm"
                 )
-
 
                 if st.button(
                     "Create account",
