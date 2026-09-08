@@ -6,6 +6,8 @@ On success, stores the JWT token + email in Streamlit session state.
 Every backend request is handled through api_client.py.
 """
 
+import textwrap
+
 import streamlit as st
 
 import api_client as api
@@ -18,31 +20,37 @@ def render():
     # Header
     # --------------------------------------------------
 
+    # NOTE: st.markdown() treats any line indented with 4+ spaces as a
+    # markdown code block, which is why the HTML was showing up as raw
+    # text instead of rendering. textwrap.dedent() strips the common
+    # leading whitespace from every line so it's parsed as real HTML.
     st.markdown(
-        """
-        <div style="
-            text-align:center;
-            margin-top:3rem;
-            margin-bottom:1.5rem;
-        ">
-            <span style="font-size:40px;">🗓️</span>
-
+        textwrap.dedent(
+            """\
             <div style="
-                font-size:24px;
-                font-weight:700;
-                color:#0B1A3D;
+                text-align:center;
+                margin-top:3rem;
+                margin-bottom:1.5rem;
             ">
-                AI Meeting Assistant
-            </div>
+                <span style="font-size:40px;">🗓️</span>
 
-            <div style="
-                font-size:13px;
-                color:#5B6B8C;
-            ">
-                Sign in to continue
+                <div style="
+                    font-size:24px;
+                    font-weight:700;
+                    color:#0B1A3D;
+                ">
+                    AI Meeting Assistant
+                </div>
+
+                <div style="
+                    font-size:13px;
+                    color:#5B6B8C;
+                ">
+                    Sign in to continue
+                </div>
             </div>
-        </div>
-        """,
+            """
+        ),
         unsafe_allow_html=True,
     )
 
