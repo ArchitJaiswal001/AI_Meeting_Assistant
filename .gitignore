@@ -1,0 +1,22 @@
+# Backend
+backend/.env
+backend/venv/
+backend/__pycache__/
+backend/.pytest_cache/
+backend/meetings.db
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Streamlit app
+streamlit_app/venv/
+streamlit_app/__pycache__/
+streamlit_app/.env
+
+# Catch-all for any nested __pycache__/venv, in case new folders get added later
+**/__pycache__/
+**/venv/
+**/.venv/
+
+# OS/editor junk (optional but common)
+.DS_Store
+Thumbs.db
