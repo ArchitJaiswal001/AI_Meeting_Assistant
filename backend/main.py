@@ -24,7 +24,7 @@ import time
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException, BackgroundTasks, Depends
 from fastapi.middleware.cors import CORSMiddleware
 
-from config import UPLOAD_DIR
+from config import UPLOAD_DIR, ALLOWED_ORIGINS
 from database import (
     init_db, create_meeting, update_meeting, get_meeting, list_meetings,
     list_meetings_with_content, get_analytics, create_user, get_user_by_email,
@@ -46,7 +46,7 @@ app = FastAPI(title="AI Meeting Assistant API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=ALLOWED_ORIGINS.split(",") if ALLOWED_ORIGINS != "*" else ["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )

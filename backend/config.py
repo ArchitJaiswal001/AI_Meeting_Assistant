@@ -26,6 +26,7 @@ JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", "dev-only-insecure-secret-change-me
 JWT_EXPIRE_HOURS = int(os.getenv("JWT_EXPIRE_HOURS", "24"))
 
 # Where uploaded/recorded audio files are stored
+ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS", "*")
 UPLOAD_DIR = os.path.join(os.path.dirname(__file__), "uploads")
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 

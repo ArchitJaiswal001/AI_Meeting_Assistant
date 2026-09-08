@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: ai-meeting-assistant-backend
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: starter
+    envVars:
+      - key: DEEPGRAM_API_KEY
+        sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENROUTER_MODEL
+        value: openai/gpt-4o-mini
+      - key: GMAIL_ADDRESS
+        sync: false
+      - key: GMAIL_APP_PASSWORD
+        sync: false
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: JWT_EXPIRE_HOURS
+        value: "24"
+      - key: NOTION_API_KEY
+        sync: false
+      - key: NOTION_DATABASE_ID
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false
+    disk:
+      name: meeting-assistant-data
+      mountPath: /app
+      sizeGB: 1
