@@ -20,29 +20,29 @@ def render():
 
     st.markdown(
         """
-        <div style="
-            text-align:center;
-            margin-top:3rem;
-            margin-bottom:1.5rem;
-        ">
-            <span style="font-size:40px;">🗓️</span>
+<div style="
+    text-align:center;
+    margin-top:3rem;
+    margin-bottom:1.5rem;
+">
+    <span style="font-size:40px;">🗓️</span>
 
-            <div style="
-                font-size:24px;
-                font-weight:700;
-                color:#0B1A3D;
-            ">
-                AI Meeting Assistant
-            </div>
+    <div style="
+        font-size:24px;
+        font-weight:700;
+        color:#0B1A3D;
+    ">
+        AI Meeting Assistant
+    </div>
 
-            <div style="
-                font-size:13px;
-                color:#5B6B8C;
-            ">
-                Sign in to continue
-            </div>
-        </div>
-        """,
+    <div style="
+        font-size:13px;
+        color:#5B6B8C;
+    ">
+        Sign in to continue
+    </div>
+</div>
+""",
         unsafe_allow_html=True,
     )
 
