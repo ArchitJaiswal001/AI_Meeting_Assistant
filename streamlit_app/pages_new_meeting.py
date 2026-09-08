@@ -13,6 +13,7 @@ import time
 from audio_recorder_streamlit import audio_recorder
 import api_client as api
 from style import section_label, status_badge_html, stat_chip, sentiment_pill
+from config import BACKEND_URL
 
 MEETING_TYPES = ["General", "Standup", "Client Call", "Brainstorm"]
 LANGUAGES = {

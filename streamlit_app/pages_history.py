@@ -5,6 +5,7 @@ and a simple search/filter, instead of a plain table.
 import streamlit as st
 import api_client as api
 from style import section_label, status_badge_html
+from config import BACKEND_URL
 
 
 def render():

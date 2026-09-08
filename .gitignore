@@ -20,3 +20,6 @@ streamlit_app/.env
 # OS/editor junk (optional but common)
 .DS_Store
 Thumbs.db
+
+
+.streamlit/secrets.toml
